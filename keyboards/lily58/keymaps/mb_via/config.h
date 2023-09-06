@@ -27,15 +27,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-<<<<<<< HEAD:keyboards/lily58/keymaps/mb_via/config.h
 #define TAPPING_FORCE_HOLD
 #define TAPPING_TERM 100
 
-=======
-// row-driven
-#define MATRIX_ROW_PINS { GP20, GP19, GP18, GP17, GP16 }
-#define MATRIX_COL_PINS { GP9, GP10, GP11, GP12, GP13, GP14 }
-
-/* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION COL2ROW
->>>>>>> a6cfd7f221 (error):keyboards/handwired/dactyl_manuform/4x6_5/config.h
