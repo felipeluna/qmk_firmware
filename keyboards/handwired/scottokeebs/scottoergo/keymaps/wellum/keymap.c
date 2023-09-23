@@ -7,10 +7,10 @@
 
 #define XXXX KC_NONE
 
-#define LA_SYM MO(_SYM)
-#define LA_NAV MO(_NAV)
+#define LA_SYM LT(_SYM, KC_ENT)
+#define LA_NAV LT(_NAV, KC_TAB)
 #define LA_GFN MO(_GFN)
-
+#define WARPD LAG(KC_X)
 #define QUOT S(KC_GRV)
 #define PIPE S(KC_BSLS)
 #define DPIPE S(RALT(KC_BSLS))
@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
         KC_A,    KC_S,    KC_D,    KC_F,    KC_G,           KC_H,    KC_J,    KC_K,    KC_L,    KC_QUOT,
         KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  LT(_NUM, KC_SLSH),
-                          KC_LCTL, KC_SPC,  LA_NAV,         LA_SYM , KC_LSFT, KC_RALT
+                          LCTL_T(KC_ESC), SFT_T(KC_SPC),  LA_NAV,         LA_SYM , SFT_T(KC_BSPC), KC_RALT
     ),
 
     [_SYM] = LAYOUT_split_3x5_3(
@@ -61,15 +61,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_NAV] = LAYOUT_split_3x5_3(
-        SW_TAB,  SW_WIN,  TAB_L,   TAB_R,   KC_ESC,         KC_ESC,  KC_HOME, KC_END,  KC_BSPC, KC_DEL,
-        KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_ENT,         KC_LEFT,  KC_DOWN, KC_UP, KC_RGHT,  _______,
-         SPACE_L, SPACE_R, _______, KC_PSCR, KC_TAB,        KC_TAB,  KC_PGUP, KC_PGDN, KC_END, XXXXXXX,
-                          _______, _______, _______,        MO(_NUM), KC_ENT, KC_BSPC
+        SW_TAB,  SW_WIN,  TAB_L,   TAB_R,   KC_ESC,         KC_ESC,   KC_HOME, KC_INS,  KC_BSPC, KC_DEL,
+        KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_ENT,         KC_LEFT,  KC_DOWN, KC_UP,   KC_RGHT, KC_CAPS,
+         SPACE_L, SPACE_R, WARPD, KC_PSCR, KC_TAB,          KC_HOME,  KC_PGUP, KC_PGDN, KC_END, KC_INS,
+                          _______, _______, _______,        MO(_NUM), KC_ENT,  KC_BSPC
     ),
 
     [_NUM] = LAYOUT_split_3x5_3(
-        KC_1,   KC_2,   KC_3,      KC_4,      KC_5,           KC_6,   KC_7,   KC_8,   KC_9,   KC_0,
-        KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_F11,         KC_F12,  KC_LSFT, KC_RCTL, KC_RALT,  KC_RGUI,
+        KC_1,   KC_2,   KC_3,      KC_4,      KC_5,         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
+        KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_F11,         KC_F12,  KC_LSFT, KC_RCTL, KC_RALT, KC_RGUI,
         KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
                           _______, _______, _______,        _______, _______, _______
     )
