@@ -25,6 +25,11 @@
 #define TAB_L C(S(KC_TAB))
 #define TAB_R C(KC_TAB)
 
+#define U_RDO KC_AGIN
+#define U_PST S(KC_INS)
+#define U_CPY C(KC_INS)
+#define U_CUT S(KC_DEL)
+#define U_UND KC_UNDO
 enum layers {
     _DEF,
     _GAM,
@@ -61,10 +66,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_NAV] = LAYOUT_split_3x5_3(
-        SW_TAB,  SW_WIN,  TAB_L,   TAB_R,   KC_ESC,         KC_ESC,   KC_HOME, KC_INS,  KC_BSPC, KC_DEL,
+        SW_TAB,  SW_WIN,  TAB_L,   TAB_R,   KC_ESC,         U_PST,   U_CPY, U_CUT,  U_UND, U_RDO,
         KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_ENT,         KC_LEFT,  KC_DOWN, KC_UP,   KC_RGHT, KC_CAPS,
          SPACE_L, SPACE_R, WARPD, KC_PSCR, KC_TAB,          KC_HOME,  KC_PGUP, KC_PGDN, KC_END, KC_INS,
-                          _______, _______, _______,        MO(_NUM), KC_ENT,  KC_BSPC
+                          _______, _______, _______,        MO(_NUM), KC_ENT,  KC_DEL
     ),
 
     [_NUM] = LAYOUT_split_3x5_3(
