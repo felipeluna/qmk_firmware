@@ -21,3 +21,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TERM 135
 #define PERMISSIVE_HOLD
 #define TAPPING_TERM_PER_KEY
+#define UNICODE_SELECTED_MODES UNICODE_MODE_LINUX, UNICODE_MODE_WINCOMPOSE, UNICODE_MODE_EMACS

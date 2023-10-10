@@ -39,6 +39,7 @@ enum layers {
     _SYM,
     _NAV,
     _NUM,
+    _ACC
 };
 
 enum keycodes {
@@ -88,6 +89,14 @@ enum keycodes {
 #define MT_MFFD RALT_T(KC_MFFD)
 #define MT_MUTE RGUI_T(KC_MUTE)
 
+// ACCENT LAYER
+enum unicode_names {
+    AR_LOWER,
+};
+
+const uint32_t PROGMEM unicode_map[] = {
+    [AR_LOWER] = 0x00E5,  // aring
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_DEF] = LAYOUT_split_3x5_3(
@@ -108,8 +117,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_NO   , KC_F7   , KC_F8   , KC_F9   , KC_F12  ,      KC_WH_U , KC_WH_L , KC_MS_U , KC_WH_R , KC_VOLU ,     \
        KC_ESC  , KC_F4   , KC_F5   , KC_F6   , KC_F11  ,      KC_BTN3 , KC_MS_L , KC_MS_D , KC_MS_R , KC_VOLD ,     \
        KC_LGUI , MT_F1   , MT_F2   , MT_F3   , KC_F10  ,      KC_WH_D , MT_MRWD , MT_MPLY , MT_MFFD , MT_MUTE ,     \
-                              _______, _______, _______,      KC_TRNS , KC_BTN1 , KC_QUES
-    )
+                              _______, _______, _______,      KC_TRNS , MO(_ACC) , KC_QUES
+    ),
+
+    [_ACC] = LAYOUT_split_3x5_3(
+       QK_BOOT , _______ , _______ , _______ , _______ ,      _______ , _______ , _______ , _______ , UM(AR_LOWER) ,     \
+       _______ , _______ , _______ , _______ , _______ ,      _______ , _______ , _______ , _______ , _______ ,      \
+       _______ , _______ , _______ , _______ , _______ ,      _______ , _______ , _______ , _______ , _______ ,      \
+                           _______ , _______ , _______ ,      KC_TRNS , _______ , _______
+    ),
+
+
 
     //    [_NUM] = LAYOUT_split_3x5_3(
     //        KC_1,   KC_2,   KC_3,      KC_4,      KC_5,         KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
