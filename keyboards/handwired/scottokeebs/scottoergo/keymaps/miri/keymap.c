@@ -11,6 +11,7 @@
 #define LA_NAV LT(_NAV, KC_TAB)
 #define LE_NAV LT(_NAV, KC_ESC)
 #define LD_SYM LT(_SYM, KC_DEL)
+#define SF_TAB RSFT_T(KC_TAB)
 #define LA_GFN MO(_GFN)
 #define WARPD LAG(KC_X)
 #define QUOT S(KC_GRV)
@@ -103,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_Q,    KC_W,    KC_E,     KC_R,    KC_T,           KC_Y,    KC_U,     KC_I,    KC_O,    KC_P,
         KC_A,    KC_S,    KC_D,     KC_F,    KC_G,           KC_H,    KC_J,     KC_K,    KC_L,    KC_QUOT,
         MT_Z,    MT_X,    MT_C,     MT_V,    MT_B,           KC_N,    MT_M,     MT_COMM, MT_DOT,  MT_SLSH,
-			              LE_NAV,   KC_SPC,  KC_TAB,         KC_ENT,  KC_BSPC,  LD_SYM
+			              LE_NAV,   KC_SPC,  SF_TAB,         KC_ENT,  KC_BSPC,  LD_SYM
     ),
 
     [_SYM] = LAYOUT_split_3x5_3(
@@ -122,8 +123,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ACC] = LAYOUT_split_3x5_3(
        QK_BOOT , _______ , _______ , _______ , _______ ,      _______ , _______ , _______ , _______ , UM(AR_LOWER) ,     \
-       _______ , _______ , _______ , _______ , _______ ,      _______ , _______ , _______ , _______ , _______ ,      \
-       _______ , _______ , _______ , _______ , _______ ,      _______ , _______ , _______ , _______ , _______ ,      \
+       _______ , _______ , _______ , _______ , _______ ,      _______ , KC_LPRN , KC_RPRN , _______ , _______      ,     \
+       _______ , _______ , _______ , _______ , _______ ,      _______ , _______ , _______ , _______ , _______      ,     \
                            _______ , _______ , _______ ,      KC_TRNS , _______ , _______
     ),
 
