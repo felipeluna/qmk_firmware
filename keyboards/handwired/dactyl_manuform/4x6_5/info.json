@@ -15,15 +15,12 @@
         "pin": "D3"
     },
     "matrix_pins": {
-        "cols": ["D4", "C6", "D7", "E6", "B4", "B5"],
-        "rows": ["F7", "B1", "B3", "B2", "B6"]
+        "cols": ["GP10", "GP11", "GP12", "GP13", "GP14", "GP15"],
+        "rows": ["GP20", "GP19", "GP18", "GP17", "GP16"]
     },
     "diode_direction": "COL2ROW",
-    "split": {
-        "soft_serial_pin": "D0"
-    },
-    "processor": "atmega32u4",
-    "bootloader": "caterina",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
     "community_layouts": ["split_3x6_3", "split_3x5_3"],
     "layouts": {
         "LAYOUT": {
